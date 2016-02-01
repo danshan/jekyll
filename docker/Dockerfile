@@ -9,8 +9,8 @@ RUN gem install jekyll rdiscount kramdown
 VOLUME /src
 EXPOSE 80
 
-WORKDIR /src
 RUN mkdir /jekyll
 RUN cd /jekyll && jekyll new blog
+WORKDIR /jekyll/blog
 
 ENTRYPOINT ["jekyll"]
