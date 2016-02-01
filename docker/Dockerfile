@@ -13,4 +13,6 @@ RUN mkdir /jekyll
 RUN cd /jekyll && jekyll new blog
 WORKDIR /jekyll/blog
 
+RUN pwd
+RUN ls
 ENTRYPOINT ["jekyll"]
