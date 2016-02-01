@@ -16,7 +16,7 @@ WORKDIR /jekyll/blog
 RUN jekyll build
 
 RUN rm -rf /etc/nginx/sites-enabled/default
-ADD shanhh.com /etc/nginx/sites-available/shanhh.com
+ADD nginx/shanhh.com /etc/nginx/sites-available/shanhh.com
 RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
 
 # ENTRYPOINT ["jekyll"]
