@@ -10,4 +10,7 @@ VOLUME /src
 EXPOSE 4000
 
 WORKDIR /src
+RUN mkdir /jekyll
+RUN cd /jekyll && jekyll new blog
+
 ENTRYPOINT ["jekyll"]
