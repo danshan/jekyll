@@ -20,4 +20,4 @@ ADD nginx/shanhh.com /etc/nginx/sites-available/shanhh.com
 RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
 
 # ENTRYPOINT ["jekyll"]
-ENTRYPOINT ["/etc/init.d/nginx", "start"]
+#ENTRYPOINT ["/etc/init.d/nginx", "start"]
