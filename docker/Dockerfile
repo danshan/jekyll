@@ -5,6 +5,7 @@ RUN apt-get update
 RUN apt-get install -y node python-pygments
 
 RUN gem install jekyll rdiscount kramdown
+RUN apt-get install -y nginx
 
 VOLUME /src
 EXPOSE 80
@@ -13,6 +14,7 @@ RUN mkdir /jekyll
 RUN cd /jekyll && jekyll new blog
 WORKDIR /jekyll/blog
 
-RUN pwd
-RUN ls
+RUN ls /etc/nginx/
+RUN ls /etc/nginx/sites-enabled/*
+
 ENTRYPOINT ["jekyll"]
