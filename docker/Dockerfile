@@ -7,7 +7,7 @@ RUN apt-get install -y node python-pygments
 RUN gem install jekyll rdiscount kramdown
 
 VOLUME /src
-EXPOSE 4000
+EXPOSE 80
 
 WORKDIR /src
 RUN mkdir /jekyll
