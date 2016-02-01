@@ -14,7 +14,6 @@ RUN mkdir /jekyll
 RUN cd /jekyll && jekyll new blog
 WORKDIR /jekyll/blog
 
-RUN ls /etc/nginx/
-RUN ls /etc/nginx/sites-enabled/*
+RUN cat /etc/nginx/sites-enabled/default
 
 ENTRYPOINT ["jekyll"]
