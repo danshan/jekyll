@@ -13,7 +13,11 @@ EXPOSE 80
 RUN mkdir /jekyll
 RUN cd /jekyll && jekyll new blog
 WORKDIR /jekyll/blog
+RUN jekyll build
 
-RUN cat /etc/nginx/sites-enabled/default
+RUN rm -rf /etc/nginx/sites-enabled/default
+ADD shanhh.com /etc/nginx/sites-available/shanhh.com
+RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
 
-ENTRYPOINT ["jekyll"]
+# ENTRYPOINT ["jekyll"]
+ENTRYPOINT ["/etc/init.d/nginx", "start"]
