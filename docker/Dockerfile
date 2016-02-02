@@ -6,7 +6,7 @@ RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update
 
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-RUN apt-get install -y nodejs python-pygments nginx build-essential ruby2.2 ruby2.2-dev wget zip python-pip vim
+RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip python-pip vim
 
 # install gem
 WORKDIR /tmp
@@ -15,6 +15,7 @@ RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install jekyll jekyll-sitemap jekyll-paginate rdiscount kramdown
+RUN pip install -U pip
 RUN pip install pygments --upgrade
 
 VOLUME /src
