@@ -1,11 +1,20 @@
-FROM ruby:2.2
+FROM ubuntu:14.04
 MAINTAINER i@shanhh.com
 
+RUN apt-get install -y software-properties-common
+RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update
-RUN apt-get install -y node python-pygments
 
+RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN apt-get install -y nodejs python-pygments nginx build-essential ruby2.2 ruby2.2-dev wget zip
+
+# install gem
+WORKDIR /tmp
+RUN wget https://rubygems.org/rubygems/rubygems-2.2.2.zip --secure-protocol=TLSv1
+RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
+
+RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install jekyll rdiscount kramdown
-RUN apt-get install -y nginx
 
 VOLUME /src
 EXPOSE 80
