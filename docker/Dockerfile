@@ -20,7 +20,7 @@ VOLUME /src
 EXPOSE 80
 
 RUN mkdir /jekyll
-RUN cd /jekyll && jekyll new blog
+ADD blog /jekyll/blog
 WORKDIR /jekyll/blog
 RUN jekyll build
 
