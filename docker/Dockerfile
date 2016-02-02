@@ -13,7 +13,7 @@ WORKDIR /tmp
 RUN wget https://rubygems.org/rubygems/rubygems-2.2.2.zip --secure-protocol=TLSv1
 RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
 
-RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+# RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install jekyll rdiscount kramdown
 
 VOLUME /src
