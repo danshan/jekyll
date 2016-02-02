@@ -6,7 +6,7 @@ RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update
 
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-RUN apt-get install -y nodejs python-pygments nginx build-essential ruby2.2 ruby2.2-dev wget zip
+RUN apt-get install -y nodejs python-pygments nginx build-essential ruby2.2 ruby2.2-dev wget zip python-pip vim
 
 # install gem
 WORKDIR /tmp
