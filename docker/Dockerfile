@@ -28,4 +28,4 @@ RUN jekyll build
 #ADD nginx/shanhh.com /etc/nginx/sites-available/shanhh.com
 #RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
 
-#ENTRYPOINT ["service", "nginx", "start"]
+ENTRYPOINT ["service", "nginx", "start"]
