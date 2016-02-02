@@ -13,7 +13,7 @@ WORKDIR /tmp
 RUN wget https://rubygems.org/rubygems/rubygems-2.2.2.zip --secure-protocol=TLSv1
 RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
 
-#RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install jekyll rdiscount kramdown
 
 VOLUME /src
@@ -24,8 +24,10 @@ RUN cd /jekyll && jekyll new blog
 WORKDIR /jekyll/blog
 RUN jekyll build
 
-#RUN rm -rf /etc/nginx/sites-enabled/default
-#ADD nginx/shanhh.com /etc/nginx/sites-available/shanhh.com
-#RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
+RUN rm -rf /etc/nginx/sites-enabled/default
+ADD nginx/shanhh.com /etc/nginx/sites-available/shanhh.com
+RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
 
-ENTRYPOINT ["service", "nginx", "start"]
+ADD ./bin/entrypoint.sh /jekyll/entrypoint.sh
+
+ENTRYPOINT ["/jekyll/entrypoint.sh"]
