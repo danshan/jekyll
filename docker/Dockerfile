@@ -15,7 +15,7 @@ RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install jekyll jekyll-sitemap jekyll-paginate rdiscount kramdown
-RUN pip install Pygments
+RUN pip install pygments --upgrade
 
 VOLUME /src
 EXPOSE 80
