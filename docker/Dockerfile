@@ -24,9 +24,9 @@ RUN cd /jekyll && jekyll new blog
 WORKDIR /jekyll/blog
 RUN jekyll build
 
-RUN rm -rf /etc/nginx/sites-enabled/default
-ADD nginx/shanhh.com /etc/nginx/sites-available/shanhh.com
-RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
+#RUN rm -rf /etc/nginx/sites-enabled/default
+#ADD nginx/shanhh.com /etc/nginx/sites-available/shanhh.com
+#RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
 
 ADD ./bin/entrypoint.sh /jekyll/entrypoint.sh
 
