@@ -6,7 +6,7 @@ words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
 siteurl: http://www.shanhh.com
-cdn: "http://7xqp1j.com1.z0.glb.clouddn.com/blog"
+cdn: "http://static.shanhh.com/blog"
 img: "?imageView2/0/w/640/h/640"
 #cdn: "http://localhost:4000"
 # url:
