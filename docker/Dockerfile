@@ -1,7 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER i@shanhh.com
 
-#RUN apt-get install -y software-properties-common
+RUN apt-get update
+RUN apt-get install -y software-properties-common
 RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update
 
