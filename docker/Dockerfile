@@ -16,7 +16,7 @@ RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 #RUN gem install sass --version 3.2.19
-RUN gem install compass --version 0.12.5
+#RUN gem install compass --version 0.12.5
 RUN yes | gem install jekyll --version 2.5.3
 RUN gem install jekyll-compass jekyll-sitemap jekyll-paginate
 RUN gem install rdiscount kramdown pygments.rb
