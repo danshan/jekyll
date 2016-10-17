@@ -23,6 +23,7 @@ RUN git clone git://github.com/imathis/octopress.git octopress
 WORKDIR /tmp/octopress
 RUN gem install bundler
 RUN bundle install
+RUN rake install
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 #RUN gem install --no-document jekyll:3.2.1
