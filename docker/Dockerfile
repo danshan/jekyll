@@ -20,7 +20,6 @@ RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip
 WORKDIR /tmp
 RUN gem install bundler
 RUN gem install octopress
-RUN bundle install
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 #RUN gem install --no-document jekyll:3.2.1
