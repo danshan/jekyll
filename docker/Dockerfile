@@ -19,7 +19,8 @@ RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip
 # install octopress 
 WORKDIR /tmp
 RUN git clone git://github.com/imathis/octopress.git octopress
-RUN WORKDIR /tmp/octopress
+
+WORKDIR /tmp/octopress
 RUN gem install bundler
 RUN rbenv rehash 
 RUN bundle install
