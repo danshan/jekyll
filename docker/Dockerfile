@@ -17,6 +17,7 @@ RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip
 #RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+RUN gem install bundler
 RUN gem install --no-document jekyll:3.2.1
 RUN gem install --no-document jekyll-sitemap jekyll-paginate
 
