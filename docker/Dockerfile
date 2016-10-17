@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get install -y curl
 
 #RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip python-pip vim
+RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip python-pip vim git
 
 # install gem
 #WORKDIR /tmp
