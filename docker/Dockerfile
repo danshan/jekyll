@@ -25,12 +25,11 @@ RUN gem install bundler
 RUN bundle install
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
-RUN gem install bundler
-RUN gem install --no-document jekyll:3.2.1
-RUN gem install --no-document jekyll-sitemap jekyll-paginate
+#RUN gem install --no-document jekyll:3.2.1
+#RUN gem install --no-document jekyll-sitemap jekyll-paginate
 
-RUN gem install sass
-RUN gem install compass
+#RUN gem install sass
+#RUN gem install compass
 RUN gem install rdiscount kramdown pygments.rb
 RUN pip install -U pip
 RUN pip install pygments --upgrade
