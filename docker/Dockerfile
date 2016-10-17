@@ -1,6 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER i@shanhh.com
 
+ARG JEKYLL_VERSION=3.2.1
+
 RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-add-repository ppa:brightbox/ruby-ng
@@ -15,10 +17,11 @@ RUN wget https://rubygems.org/rubygems/rubygems-2.2.2.zip --secure-protocol=TLSv
 RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
-RUN gem install sass --version 3.2.19
-RUN gem install compass --version 0.12.5
-RUN yes | gem install jekyll --version 1.2.1
-RUN gem install jekyll-sitemap jekyll-paginate
+RUN gem install --no-document jekyll:${JEKYLL_VERSION}
+RUN gem install --no-document jekyll-sitemap jekyll-paginate
+
+RUN gem install sass
+RUN gem install compass
 RUN gem install rdiscount kramdown pygments.rb
 RUN pip install -U pip
 RUN pip install pygments --upgrade
