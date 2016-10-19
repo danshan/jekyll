@@ -23,7 +23,7 @@ RUN gem install octopress
 
 # RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 #RUN gem install --no-document jekyll:3.2.1
-#RUN gem install --no-document jekyll-sitemap jekyll-paginate
+RUN gem install --no-document jekyll-sitemap jekyll-paginate
 
 #RUN gem install sass
 #RUN gem install compass
