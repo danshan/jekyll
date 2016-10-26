@@ -3,5 +3,5 @@ layout: null
 ---
 
 {% for post in site.posts %}
-{{ site.siteurl }}{{ post.url }}
+{{ site.url }}{{ post.url }}
 {% endfor %}
