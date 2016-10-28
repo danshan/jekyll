@@ -1,5 +1,6 @@
 title:            Dan's Workspace
 description:      .
+comments:         true
 disqus_shortname: danshan
 reading_time:     true
 words_per_minute: 200
