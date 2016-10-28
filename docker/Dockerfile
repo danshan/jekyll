@@ -19,16 +19,17 @@ RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip
 # install octopress 
 WORKDIR /tmp
 RUN gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
-RUN gem install bundler
-RUN gem install octopress
+RUN gem sources -l
+RUN gem install --no-ri --no-rdoc bundler 
+RUN gem install --no-ri --no-rdoc octopress
 
-# RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
-#RUN gem install --no-document jekyll:3.2.1
-RUN gem install --no-document jekyll-sitemap jekyll-paginate
+#RUN gem install --no-ri --no-rdoc jekyll:3.2.1
+RUN gem install --no-ri --no-rdoc jekyll-sitemap jekyll-paginate
 
 #RUN gem install sass
-#RUN gem install compass
-RUN gem install rdiscount kramdown pygments.rb
+#RUN gem install --no-ri --no-rdoc compass
+RUN gem install --no-ri --no-rdoc rdiscount kramdown pygments.rb
+RUN pip -i http://e.pypi.python.org/simple install fabric
 RUN pip install -U pip
 RUN pip install pygments --upgrade
 
