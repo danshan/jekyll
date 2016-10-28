@@ -18,6 +18,7 @@ RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip
 
 # install octopress 
 WORKDIR /tmp
+RUN gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 RUN gem install bundler
 RUN gem install octopress
 
