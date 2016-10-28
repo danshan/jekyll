@@ -29,7 +29,7 @@ RUN gem install --no-ri --no-rdoc jekyll-sitemap jekyll-paginate
 #RUN gem install sass
 #RUN gem install --no-ri --no-rdoc compass
 RUN gem install --no-ri --no-rdoc rdiscount kramdown pygments.rb
-RUN pip -i http://e.pypi.python.org/simple install fabric
+RUN pip -i http://pypi.douban.com/simple install fabric
 RUN pip install -U pip
 RUN pip install pygments --upgrade
 
