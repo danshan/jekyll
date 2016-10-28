@@ -30,8 +30,8 @@ RUN gem install --no-ri --no-rdoc jekyll-sitemap jekyll-paginate
 #RUN gem install --no-ri --no-rdoc compass
 RUN gem install --no-ri --no-rdoc rdiscount kramdown pygments.rb
 
-RUN pip install -i http://pypi.douban.com/simple/ -U pip --trusted-host pypi.douban.com
-RUN pip install -i http://pypi.douban.com/simple/ pygments --upgrade --trusted-host pypi.douban.com
+RUN pip install -i http://pypi.douban.com/simple/ -U pip 
+RUN pip install pygments --upgrade --trusted-host pypi.douban.com -i http://pypi.douban.com/simple/
 
 # install qiniu qshell
 WORKDIR /tmp
