@@ -29,9 +29,9 @@ RUN gem install --no-ri --no-rdoc jekyll-sitemap jekyll-paginate
 #RUN gem install sass
 #RUN gem install --no-ri --no-rdoc compass
 RUN gem install --no-ri --no-rdoc rdiscount kramdown pygments.rb
-RUN pip -i http://pypi.douban.com/simple install fabric
-RUN pip install -U pip
-RUN pip install pygments --upgrade
+
+RUN pip install -i http://pypi.douban.com/simple -U pip
+RUN pip install -i http://pypi.douban.com/simple pygments --upgrade
 
 # install qiniu qshell
 WORKDIR /tmp
