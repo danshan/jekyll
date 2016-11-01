@@ -1,6 +1,9 @@
 FROM ubuntu:14.04
 MAINTAINER i@shanhh.com
 
+RUN rm -rf /etc/apt/sources.list
+ADD ubuntu/sources.list /etc/apt/sources.list
+
 RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-add-repository ppa:brightbox/ruby-ng
