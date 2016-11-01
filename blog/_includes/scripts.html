@@ -1,6 +1,10 @@
 <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.js"></script>
 <script src="{{ site.cdn }}/assets/js/scripts.min.js"></script>
 
+{% if site.tencent_ta %}
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId={{ site.tencent_ta }}" charset="UTF-8"></script>
+{% endif %}
+
 {% if site.google_analytics %}
 <!-- Asynchronous Google Analytics snippet -->
 <script>
@@ -9,7 +13,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-86353624-1', 'auto');
+  ga('create', '{{ site.google_analytics }}', 'auto');
   ga('send', 'pageview');
 </script>
 {% endif %}
