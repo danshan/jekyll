@@ -9,4 +9,4 @@ service nginx start
 #/tmp/qshell/qshell_linux_amd64 qupload /jekyll/qiniu/qupload_assets.json
 #/tmp/qshell/qshell_linux_amd64 qupload /jekyll/qiniu/qupload_files.json
 
-# jekyll build
+bash
