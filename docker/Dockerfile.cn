@@ -1,6 +1,9 @@
 FROM ubuntu:14.04
 MAINTAINER i@shanhh.com
 
+RUN rm -rf /etc/apt/sources.list
+ADD ubuntu/sources.list /etc/apt/sources.list
+
 RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-add-repository ppa:brightbox/ruby-ng
@@ -8,7 +11,13 @@ RUN apt-get update
 
 RUN apt-get install -y curl
 
+#RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 RUN apt-get install -y nodejs nginx build-essential ruby2.2 ruby2.2-dev wget zip python-pip vim git
+
+# install gem
+#WORKDIR /tmp
+#RUN wget https://rubygems.org/rubygems/rubygems-2.2.2.zip --secure-protocol=TLSv1
+#RUN unzip rubygems-2.2.2.zip && cd rubygems-2.2.2 && ruby setup.rb
 
 # install octopress 
 WORKDIR /tmp
@@ -17,11 +26,15 @@ RUN gem sources -l
 RUN gem install --no-ri --no-rdoc bundler 
 RUN gem install --no-ri --no-rdoc octopress
 
+#RUN gem install --no-ri --no-rdoc jekyll:3.2.1
 RUN gem install --no-ri --no-rdoc jekyll-sitemap jekyll-paginate
+
+#RUN gem install sass
+#RUN gem install --no-ri --no-rdoc compass
 RUN gem install --no-ri --no-rdoc rdiscount kramdown pygments.rb
 
-RUN pip install -U pip 
-RUN pip install pygments --upgrade
+RUN pip install -i http://pypi.douban.com/simple/ -U pip 
+RUN pip install pygments --upgrade --trusted-host pypi.douban.com -i http://pypi.douban.com/simple/
 
 # install qiniu qshell
 WORKDIR /tmp
