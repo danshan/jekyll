@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "利用 Alfred workflows 简化两步验证流程"
-date: 2016-11-03 17:48
+date: 2016-11-0 17:48
 description: "利用 alfred 的 workflow 来快速完成两步验证的流程"
 tags: [alfred, 2-factor]
 image:
@@ -51,7 +51,7 @@ secret = yyyyyyyyyyyyyyyyyy
 
 定位到有个 updateTokens function:
 
-```javascript
+{% highlight javascript %}
     TokensView.prototype.updateTokens = function(tokenRows) {
       var app, element, i, len, results, tokenRow;
       results = [];
@@ -64,14 +64,14 @@ secret = yyyyyyyyyyyyyyyyyy
       }
       return results;
     };
-```
+{% endhighlight %}
 
 这部分逻辑在每隔30秒更新token时触发, 我们这里动点手脚:
 
-```javascript
+{% highlight javascript %}
 results.push(element.find('.tokenCodeString').html(app.getOtp()));
 results.push(element.find('.tokenCodeString').html(JSON.stringify(AppManager.get())));
-```
+{% endhighlight %}
 
 加的这一行把整个 apps 列表的数据全部拉下来, 并保存到剪切板.
 
@@ -79,7 +79,7 @@ results.push(element.find('.tokenCodeString').html(JSON.stringify(AppManager.get
 
 我们把剪切板中的数据弄出来, 可以看到每个网站解密后的数据. 
 
-```javascript
+{% highlight javascript %}
     {
 		"createdDate": 1471348752428,
 		"otpGenerator": {},
@@ -96,6 +96,6 @@ results.push(element.find('.tokenCodeString').html(JSON.stringify(AppManager.get
 		"deleteDate": null,
 		"digits": 6
 	}
-```
+{% endhighlight %}
 
 其中 `decryptedSeed` 就是我们需要的 secret 了
