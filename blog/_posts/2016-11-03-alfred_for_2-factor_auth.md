@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "利用 Alfred workflows 简化两步验证流程"
-date: 2016-10-25 17:48
+date: 2016-11-03 17:48
 description: "利用 alfred 的 workflow 来快速完成两步验证的流程"
 tags: [alfred, 2-factor]
 image:
