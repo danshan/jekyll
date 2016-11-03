@@ -29,8 +29,7 @@ image:
 
 对于严重的键盘党来说, 这几次窗口的切入和鼠标的切换完全不能忍.
 
-网上搜索到了一个使用 (alfred workflows](https://www.alfredapp.com/workflows/) 的方式来输入两步验证码, 叫做 [
-Gauth: Google Authenticator (Time-Based Two-Factor Authentication)](http://www.alfredforum.com/topic/4062-gauth-google-authenticator-time-based-two-factor-authentication/).
+网上搜索到了一个使用 [alfred workflows](https://www.alfredapp.com/workflows/) 的方式来输入两步验证码, 叫做 [Gauth: Google Authenticator (Time-Based Two-Factor Authentication)](http://www.alfredforum.com/topic/4062-gauth-google-authenticator-time-based-two-factor-authentication/).
 
 装上去以后, 问题来了...按照文档的要求, 我需要提供如下信息
 
