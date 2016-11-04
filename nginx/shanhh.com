@@ -11,7 +11,6 @@ server {
 
     location / {
         index index.html index.htm;
-        rewrite ^/(.*)$ https://www.shanhh.com/$1 permanent;
     }
 
     location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|css|js|html|htm)$ {
