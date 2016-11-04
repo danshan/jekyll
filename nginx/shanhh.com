@@ -1,5 +1,7 @@
 server {
-    listen 80 default_server;
+#    listen 80 default_server;
+    listen 443 ssl;
+
 
     server_name danshan-jekyll.daoapp.io shanhh.com www.shanhh.com;
     root /jekyll/blog/_site;
