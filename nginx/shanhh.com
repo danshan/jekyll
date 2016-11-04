@@ -4,6 +4,9 @@ server {
     server_name danshan-jekyll.daoapp.io shanhh.com www.shanhh.com;
     root /jekyll/blog/_site;
 
+    ssl_certificate     /jekyll/ssl/chained.pem;
+    ssl_certificate_key /jekyll/ssl/domain.key;
+
     location / {
         index index.html index.htm;
         rewrite ^/(.*)$ https://www.shanhh.com/$1 permanent;
