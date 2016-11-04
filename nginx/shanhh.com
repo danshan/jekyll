@@ -1,7 +1,7 @@
 server {
     listen 80 default_server;
 
-    server_name danshan-jekyll.daoapp.io shanhh.com www.shanhh.com fuckgfw.net www.fuckgfw.net;
+    server_name danshan-jekyll.daoapp.io shanhh.com www.shanhh.com;
     root /jekyll/blog/_site;
 
     location / {
