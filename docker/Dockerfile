@@ -32,6 +32,7 @@ EXPOSE 80
 RUN mkdir /jekyll
 ADD blog /jekyll/blog
 ADD qiniu /jekyll/qiniu
+ADD /root/ssl/www/challenges /jekyll/ssl/www/challenges
 WORKDIR /jekyll/blog
 RUN jekyll build
 
@@ -39,6 +40,7 @@ RUN rm -rf /etc/nginx/sites-enabled/default
 ADD nginx/shanhh.com /etc/nginx/sites-available/shanhh.com
 RUN ln -s /etc/nginx/sites-available/shanhh.com /etc/nginx/sites-enabled/shanhh.com
 
-ADD ./bin/entrypoint.sh /jekyll/entrypoint.sh
+ADD bin/entrypoint.sh /jekyll/entrypoint.sh
+
 
 ENTRYPOINT ["/jekyll/entrypoint.sh"]

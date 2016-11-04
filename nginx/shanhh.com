@@ -15,7 +15,7 @@ server {
     }
 
     location ^~ /.well-known/acme-challenge/ {
-        alias /root/ssl/www/challenges;
+        alias /jekyll/ssl/www/challenges/;
         try_files $uri =404;
     }
 }
