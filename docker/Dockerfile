@@ -32,7 +32,6 @@ EXPOSE 80
 RUN mkdir /jekyll
 ADD blog /jekyll/blog
 ADD qiniu /jekyll/qiniu
-ADD /root/ssl/www/challenges /jekyll/ssl/www/challenges
 WORKDIR /jekyll/blog
 RUN jekyll build
 
