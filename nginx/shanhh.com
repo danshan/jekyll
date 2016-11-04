@@ -18,6 +18,14 @@ server {
         expires      1h;
     }
 
+    location ^~ /blog/files/ {
+        return 301 http://static.shanhh.com$request_uri;
+    }
+
+    location ^~ /blog/assets/ {
+        return 301 http://static.shanhh.com$request_uri;
+    }
+
 }
 
 server {
