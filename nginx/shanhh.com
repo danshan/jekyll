@@ -27,8 +27,20 @@ server {
 
 }
 
-#server {
-#    listen 80;
-#    server_name shanhh.com www.shanhh.com;
-#    return 301 https://$host$request_uri;
-#}
+server {
+    listen 80;
+    server_name calendar.shanhh.com;
+    return 301 https://calendar.google.com/calendar;
+}
+
+server {
+    listen 80;
+    server_name contact.shanhh.com contacts.shanhh.com;
+    return 301 https://contacts.google.com/preview/all;
+}
+
+server {
+    listen 80;
+    server_name mail.shanhh.com;
+    return 301 https://mail.google.com;
+}
