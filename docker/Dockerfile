@@ -21,11 +21,6 @@ RUN gem install --no-ri --no-rdoc rdiscount kramdown pygments.rb
 RUN pip install -U pip 
 RUN pip install pygments --upgrade
 
-# install qiniu qshell
-WORKDIR /tmp
-RUN wget "http://devtools.qiniu.com/qshell-v1.8.1.zip"
-RUN unzip qshell-v1.8.1.zip -d qshell
-
 VOLUME /src
 EXPOSE 80
 
