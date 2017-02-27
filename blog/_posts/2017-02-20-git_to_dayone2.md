@@ -29,7 +29,7 @@ sudo /Applications/Day\ One.app/Contents/Resources/install_cli.sh
 
 参考 @dduan 的 [git2dayone](https://github.com/dduan/git2dayone), 发现是基于 day one 1的, 所以基于这个脚本做了一定的修改.
 
-```bash
+{% highlight bash %}
 #!/usr/bin/env sh
 
 query=$1
@@ -56,15 +56,15 @@ do
         fi
     done
 done
-```
+{% endhighlight %}
 
 这里看到我在平时工作可能涉及到三个workspace, 脚本会针对每个workspace中的每个git项目来导出当天的git commit log, 并保存到 Day One 2.
 
 最基本的功能已经完成了, 下面要让脚本自动执行, 我所在的公司每天 17:30 下班, 所以我给自己写个 cron 任务
 
-```
+{% highlight bash %}
 30 17 * * * /Users/dan/workspace/others/git2dayone/day_one_git_messages.sh
-```
+{% endhighlight %}
 
 最后一步, 为了有的时候周末在家或者咖啡厅写代码, 可能不会触发 17:30 的job, 我需要添加一个方便的手动触发的功能.
 这一次, 借助了 Alfred 的 workflow.
